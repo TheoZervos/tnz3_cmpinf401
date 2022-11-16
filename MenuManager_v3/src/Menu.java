@@ -62,6 +62,28 @@ public class Menu {
 		return total;
 	}
 
+	//sums total price from all included menu parts (all non-null options)
+	public int totalPrice() {
+
+		int total = 0;
+
+		////adding calories to total if menu item exists
+
+		if(entree != null) {    //entree calories
+			total += entree.getPrice();
+		}
+		if(side != null) {      //side calories
+			total += side.getPrice();
+		}
+		if(salad != null){      //salad calories
+			total += salad.getPrice();
+		}
+		if(dessert != null) {   //dessert calories
+			total += dessert.getPrice();
+		}
+
+		return total;
+	}
 
 	//builds the description of the menu (all non-null options)
 	public String description() {
@@ -134,7 +156,7 @@ public class Menu {
 		return salad;
 	}
 
-	public Dessert getDesert() {
+	public Dessert getDessert() {
 
 		if(dessert == null) {
 			return null;
@@ -162,10 +184,10 @@ public class Menu {
 		this.salad = newSalad;
 	}
 
-	public void setDesert(Dessert newDessert) {
+	public void setDessert(Dessert newDessert) {
 		this.dessert = newDessert;
 	}
-	
+
 	//Overridden toString
 	public String toString() {
 		return name;

@@ -1,12 +1,12 @@
 
 public class MenuItem {
-	
+
 	//instance variables
 	private String name;
 	private String description;
 	private int calories;
 	private double price;
-	
+
 	//constructors
 	public MenuItem(String n, String d, int cal, double p) {
 		this.name = n;
@@ -14,7 +14,7 @@ public class MenuItem {
 		this.calories = cal;
 		this.price = p;
 	}
-	
+
 	//getters
 	public String getName() {
 		return name;
@@ -27,7 +27,7 @@ public class MenuItem {
 	public String getDescription() {
 		return description;
 	}
-	
+
 	public double getPrice() {
 		return price;
 	}
@@ -45,11 +45,11 @@ public class MenuItem {
 	public void setCalories(int newCal) {
 		this.calories = newCal;
 	}
-	
+
 	public void setPrice(double newPrice) {
 		this.price = newPrice;
 	}
-	
+
 	//Overidden toString
 	public String toString() {
 		return name;

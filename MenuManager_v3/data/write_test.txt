@@ -1,0 +1,100 @@
+Menu 1
+
+Deep fried chicken breasts
+Deep fried chicken breasts using our traditional powder receipt
+560
+12.0
+
+Grilled Potatoes
+Boiled potatoes grilled in oven with a touch of butter
+270
+5.0
+
+Soy bean sprout with corn
+Soy bean sprout with corn and olives
+210
+5.0
+
+Fruit Salad
+Oranges, bananas, apples, grapes, strawberries
+200
+5.0
+
+Total Calories: 1240
+Total Price: 27
+
+Menu 2
+
+Sirloin Steak
+A delicious piece of 1/2 a pound of our carefully selected meat grilled and seasoned. Choose how much you want it cooked
+820
+22.5
+
+Quinoa
+Quinoa
+140
+4.7
+
+Mixed Vegetables
+Includes small tomatoes, lettuce, cucumber, spinach and arugula
+90
+7.0
+
+Chocolate Cake
+Low calorie chocolate cake
+175
+7.0
+
+Total Calories: 1225
+Total Price: 40
+
+Menu 3
+
+Griller Steak
+Carefully selected prime quality steak griller to the point of your preference
+740
+15.0
+
+Grilled Potatoes
+Boiled potatoes grilled in oven with a touch of butter
+270
+5.0
+
+Potato Salad
+Potato Salad
+195
+4.0
+
+Chocolate Cake
+Low calorie chocolate cake
+175
+7.0
+
+Total Calories: 1380
+Total Price: 31
+
+Menu 4
+
+Deep fried chicken breasts
+Deep fried chicken breasts using our traditional powder receipt
+560
+12.0
+
+Quinoa
+Quinoa
+140
+4.7
+
+Soy bean sprout with corn
+Soy bean sprout with corn and olives
+210
+5.0
+
+Fruit Salad
+Oranges, bananas, apples, grapes, strawberries
+200
+5.0
+
+Total Calories: 1110
+Total Price: 26
+

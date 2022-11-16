@@ -9,16 +9,92 @@ import java.util.ArrayList;
 public class MenuTest {
 
 	public static void main(String[] args) {
-		
-		
+
+
+		////readItems Test
+		System.out.println("readItems Test");
 		ArrayList<MenuItem> tires = FileManager.readItems("data\\dishes.txt");
-		
+
 		System.out.println(tires.size());
-		
+
 		for(int i = 0; i < tires.size(); i++) {
 			System.out.println(tires.get(i));
 		}
-		
+
+
+		////MenuManager Test
+		System.out.println("\nMenuManager Test");
+		MenuManager manager = new MenuManager("data\\dishes.txt");
+
+		ArrayList<Dessert> desserts = manager.getDesserts();
+		ArrayList<Salad> salads = manager.getSalads();
+		ArrayList<Side> sides = manager.getSides();
+		ArrayList<Entree> entrees = manager.getEntrees();
+
+		System.out.println("\n****Desserts****");
+		for(int i = 0; i < desserts.size(); i++) {
+			System.out.println(desserts.get(i));
+		}
+
+		System.out.println("\n****Salads****");
+		for(int i = 0; i < salads.size(); i++) {
+			System.out.println(salads.get(i));
+		}
+
+		System.out.println("\n****Sides****");
+		for(int i = 0; i < sides.size(); i++) {
+			System.out.println(sides.get(i));
+		}
+
+		System.out.println("\n****Entrees****");
+		for(int i = 0; i < entrees.size(); i++) {
+			System.out.println(entrees.get(i));
+		}
+
+
+		////Random menu test
+		System.out.println("\nrandomMenu Test");
+		Menu random = manager.randomMenu("Random Menu");
+
+		System.out.println(random.getName());
+		System.out.println(random.getEntree());
+		System.out.println(random.getSide());
+		System.out.println(random.getSalad());
+		System.out.println(random.getDessert());
+
+
+		////Max/min calories test
+		Menu max = manager.maxCalories("Max");
+		Menu min = manager.minCalories("Min");
+
+		System.out.println("\nmaxCalories Test");
+		System.out.println(max.getName());
+		System.out.println(max.getEntree());
+		System.out.println(max.getSide());
+		System.out.println(max.getSalad());
+		System.out.println(max.getDessert());
+
+		System.out.println("\nminCalories Test");
+		System.out.println(min.getName());
+		System.out.println(min.getEntree());
+		System.out.println(min.getSide());
+		System.out.println(min.getSalad());
+		System.out.println(min.getDessert());
+
+
+
+		//writeMenu Test
+		System.out.println("\nwriteMenu Test");
+
+		ArrayList<Menu> menus = new ArrayList<Menu>();
+
+		menus.add(manager.randomMenu("Menu 1"));
+		menus.add(manager.randomMenu("Menu 2"));
+		menus.add(manager.randomMenu("Menu 3"));
+		menus.add(manager.randomMenu("Menu 4"));
+
+		FileManager.writeMenu("data\\write_test.txt", menus);
+
 		/*
 		///Initializing all non menu objects
 
@@ -77,7 +153,7 @@ public class MenuTest {
 		System.out.println(local.getSalad().getName());
 		System.out.println(local.getDesert().getName());
 		System.out.println();
-		**/	
+		 **/	
 	}
 
 }

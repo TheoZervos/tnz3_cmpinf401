@@ -5,7 +5,7 @@
  */
 
 public class Entree extends MenuItem{
-	
+
 	public Entree(String n, String d, int cal, double p) {
 		super(n, d, cal, p);
 	}
