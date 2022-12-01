@@ -1,0 +1,100 @@
+Menu 1
+
+Deep fried chicken breasts
+Deep fried chicken breasts using our traditional powder receipt
+560
+12.0
+
+Grilled Potatoes
+Boiled potatoes grilled in oven with a touch of butter
+270
+5.0
+
+Potato Salad
+Potato Salad
+195
+4.0
+
+Fruit Salad
+Oranges, bananas, apples, grapes, strawberries
+200
+5.0
+
+Total Calories: 1225
+Total Price: 26
+
+Menu 2
+
+Sirloin Steak
+A delicious piece of 1/2 a pound of our carefully selected meat grilled and seasoned. Choose how much you want it cooked
+820
+22.5
+
+Grilled Potatoes
+Boiled potatoes grilled in oven with a touch of butter
+270
+5.0
+
+Mixed Vegetables
+Includes small tomatoes, lettuce, cucumber, spinach and arugula
+90
+7.0
+
+Ice Cream
+Choose among vanilla, mango, pineapple, chocolate and orange ice cream
+250
+3.2
+
+Total Calories: 1430
+Total Price: 37
+
+Menu 3
+
+Griller Steak
+Carefully selected prime quality steak griller to the point of your preference
+740
+15.0
+
+Rice
+Plain rice
+160
+3.5
+
+Potato Salad
+Potato Salad
+195
+4.0
+
+Fruit Salad
+Oranges, bananas, apples, grapes, strawberries
+200
+5.0
+
+Total Calories: 1295
+Total Price: 27
+
+Menu 4
+
+Curry Chicken
+Curry marinated chicken, cooked slowly in wood fire oven
+430
+11.5
+
+Rice
+Plain rice
+160
+3.5
+
+Mixed Vegetables
+Includes small tomatoes, lettuce, cucumber, spinach and arugula
+90
+7.0
+
+Fruit Salad
+Oranges, bananas, apples, grapes, strawberries
+200
+5.0
+
+Total Calories: 880
+Total Price: 26
+
