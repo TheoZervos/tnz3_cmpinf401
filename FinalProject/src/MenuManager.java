@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 /**
- * Class MenuManager
+ * This class is used to manage Menus and MenuItems
  * @author Theo Zervos
- * Created: 11/14/2022
+ * @since 11-14-2022
  */
 
 public class MenuManager {
@@ -15,8 +15,10 @@ public class MenuManager {
 
 
 	/**
-	 * Constructor Method MenuManager
-	 * @param dishesFile String of file directory name
+	 * This is the constructor method of MenuManager that uses a file in correct
+	 * format to add build the ArrayLists for Entrees, Sides, Salads, and Desserts
+	 * 
+	 * @param dishesFile This is a String of the chosen file directory
 	 */
 	public MenuManager(String dishesFile) {
 
@@ -51,9 +53,11 @@ public class MenuManager {
 	}
 
 	/**
-	 * Method randomMenu
-	 * @param name a String
-	 * @return a completed random menu object
+	 * This method creates a random menu object using random entrees, sides,
+	 * salads, and desserts in the MenuManager object
+	 * 
+	 * @param name This is a String that will be the name of the Menu object created
+	 * @return Menu This returns a completed random menu object
 	 */
 	public Menu randomMenu(String name) {
 
@@ -70,9 +74,11 @@ public class MenuManager {
 	}
 
 	/**
-	 * Method minCalories
-	 * @param name a String
-	 * @return a Menu object of the least caloric menu
+	 * This method returns the lowest possible calorie menu using the entrees, sides, salads,
+	 * and desserts in the MenuManager object
+	 * 
+	 * @param name This is a String that will become the name of the Menu object created
+	 * @return Menu This returns a Menu object of the lowest possible calories
 	 */
 	public Menu minCalories(String name) {
 
@@ -116,9 +122,11 @@ public class MenuManager {
 	}
 
 	/**
-	 * Method maxCalories
-	 * @param name a String
-	 * @return a Menu object of the most caloric menu
+	 * This method returns the highest possible calorie menu using the entrees, sides, salads,
+	 * and desserts in the MenuManager object
+	 * 
+	 * @param name This is a String that will become the name of the Menu object created
+	 * @return Menu This returns a Menu object of the highest possible calories
 	 */
 	public Menu maxCalories(String name) {
 
@@ -163,36 +171,78 @@ public class MenuManager {
 
 
 	//getters
+	/**
+	 * This returns the entrees in the MenuManager
+	 * 
+	 * @return ArrayList This returns an ArrayList of Entrees
+	 */
 	public ArrayList<Entree> getEntrees(){
 		return entrees;
 	}
-
+	
+	/**
+	 * This returns the sides in the MenuManager
+	 * 
+	 * @return ArrayList This returns an ArrayList of Sides
+	 */
 	public ArrayList<Side> getSides(){
 		return sides;
 	}
 
+	/**
+	 * This returns the salads in the MenuManager
+	 * 
+	 * @return ArrayList This returns an ArrayList of Salads
+	 */
 	public ArrayList<Salad> getSalads(){
 		return salads;
 	}
 
+	/**
+	 * This returns the desserts in the MenuManager
+	 * 
+	 * @return ArrayList This returns an ArrayList of Desserts
+	 */
 	public ArrayList<Dessert> getDesserts(){
 		return desserts;
 	}
+	
+	
 
 
 	//setters
+	/**
+	 * Replaces the current entrees with new entrees
+	 * 
+	 * @param newEntrees This is the new ArrayList of entrees for the MenuManager
+	 */
 	public void setEntrees(ArrayList<Entree> newEntrees){
 		this.entrees = newEntrees;
 	}
 
+	/**
+	 * Replaces the current sides with new sides
+	 * 
+	 * @param newEntrees This is the new ArrayList of sides for the MenuManager
+	 */
 	public void getSides(ArrayList<Side> newSides){
 		this.sides = newSides;
 	}
 
+	/**
+	 * Replaces the current salads with new salads
+	 * 
+	 * @param newEntrees This is the new ArrayList of salads for the MenuManager
+	 */
 	public void getSalads(ArrayList<Salad> newSalads){
 		this.salads = newSalads;
 	}
 
+	/**
+	 * Replaces the current desserts with new desserts
+	 * 
+	 * @param newEntrees This is the new ArrayList of desserts for the MenuManager
+	 */
 	public void getDesserts(ArrayList<Dessert> newDesserts){
 		this.desserts = newDesserts;
 	}

@@ -1,7 +1,10 @@
 /**
- * Class Menu
+ * This class is creates Menu objects which can contain
+ * an Entree object, a Side object, a Salad object, and 
+ * a Dessert object
+ * 
  * @author Theo Zervos
- * Created: 10/03/2022
+ * @since 10-13-2022
  */
 
 //Menu Class
@@ -14,7 +17,12 @@ public class Menu {
 	private Salad salad;
 	private Dessert dessert;
 
-	//constructors
+	/**
+	 * This constructor creates a Menu object with only a name, all other
+	 * variables are set to null
+	 * 
+	 * @param name This is a String for the name of the Menu
+	 */
 	public Menu(String name) {			//Menu with only a name
 		this.name = name;
 		this.entree = null;
@@ -22,7 +30,14 @@ public class Menu {
 		this.salad = null;
 		this.dessert = null;
 	}
-
+	
+	/**
+	 * This constructor creates a menu object with just a name and Entree object,
+	 * all other variables are set to null
+	 * 
+	 * @param name This is a String for the name of the Menu
+	 * @param entree This is an Entree object for the entree of the Menu
+	 */
 	public Menu(String name, Entree entree) {			//Menu with name and main entree
 		this.name = name;
 		this.entree = entree;
@@ -30,7 +45,17 @@ public class Menu {
 		this.salad = null;
 		this.dessert = null;
 	}
-
+	
+	/**
+	 * This constructor creates a menu object with a name, Entree object, Side object, Salad object,
+	 * and dessert Object, no variables are null
+	 * 
+	 * @param name This is a String for the name of the Menu
+	 * @param entree This is an Entree object for the entree of the Menu
+	 * @param side This is a Side object for the side of the Menu
+	 * @param salad This is a Salad object for the salad of the Menu
+	 * @param dessert This is a Dessert object for the dessert of the Menu
+	 */
 	public Menu(String name, Entree entree, Side side, Salad salad, Dessert dessert) {		//Menu with all food options
 		this.name = name;
 		this.entree = entree;
@@ -38,7 +63,13 @@ public class Menu {
 		this.dessert = dessert;
 		this.salad = salad;
 	}
-
+	
+	/**
+	 * This method is used to add up the total calories from the entree, side, salad,
+	 * and dessert of the Menu
+	 * 
+	 * @return int This returns the total calories from the entree, side, salad, and dessert
+	 */
 	//sums total calories from all included menu parts (all non-null options)
 	public int totalCalories() {
 
@@ -61,8 +92,14 @@ public class Menu {
 
 		return total;
 	}
-
-	//sums total price from all included menu parts (all non-null options)
+	
+	/**
+	 * This method returns the total price of the menu from the entree, side, salad,
+	 * and dessert
+	 * 
+	 * @return int This returns the total price value by adding up the price of the entree, side, salad, and dessert
+	 */
+ 	//sums total price from all included menu parts (all non-null options)
 	public int totalPrice() {
 
 		int total = 0;
@@ -84,7 +121,12 @@ public class Menu {
 
 		return total;
 	}
-
+	
+	/**
+	 * This method build a comprehensive menu description
+	 *
+	 * @return String This returns the menu description by using the description of the entree, side, salad, and dessert
+	 */
 	//builds the description of the menu (all non-null options)
 	public String description() {
 
@@ -123,12 +165,22 @@ public class Menu {
 	}
 
 
-
+	
 	////Getters
+	/**
+	 * This method returns the name of Menu
+	 * 
+	 * @return String This returns the name of the Menu
+	 */
 	public String getName() {
 		return name;
 	}
-
+	
+	/**
+	 * This method returns the entree of Menu
+	 * 
+	 * @return Entree This returns the entree of the Menu
+	 */
 	public Entree getEntree() {
 
 		if(entree == null) {
@@ -137,7 +189,12 @@ public class Menu {
 
 		return entree;
 	}
-
+	
+	/**
+	 * This method returns the side of Menu
+	 * 
+	 * @return Side This returns the side of the Menu
+	 */
 	public Side getSide() {
 
 		if(side == null) {
@@ -146,7 +203,12 @@ public class Menu {
 
 		return side;
 	}
-
+	
+	/**
+	 * This method returns the salad of Menu
+	 * 
+	 * @return Salad This returns the salad of the Menu
+	 */
 	public Salad getSalad() {
 
 		if(salad == null) {
@@ -156,6 +218,11 @@ public class Menu {
 		return salad;
 	}
 
+	/**
+	 * This returns the dessert of Menu
+	 * 
+	 * @return Dessert This returns the dessert of the Menu
+	 */
 	public Dessert getDessert() {
 
 		if(dessert == null) {
@@ -168,22 +235,47 @@ public class Menu {
 
 
 	////Setters
+	/**
+	 * This changes the name of the Menu
+	 * 
+	 * @param newName This is a String that will replace the current Menu name
+	 */
 	public void setName(String newName) {
 		this.name = newName;
 	}
-
+	
+	/**
+	 * This changes the entree of the Menu
+	 * 
+	 * @param newEntree This is a Entree object that will replace the current Menu entree
+	 */
 	public void setEntree(Entree newEntree) {
 		this.entree = newEntree;
 	}
 
+	/**
+	 * This changes the side of the Menu
+	 * 
+	 * @param newSide This is a Side object that will replace the current Menu side
+	 */
 	public void setSide(Side newSide) {
 		this.side = newSide;
 	}
 
+	/**
+	 * This changes the salad of the Menu
+	 * 
+	 * @param newSalad This is a Salad object that will replace the current Menu salad
+	 */
 	public void setSalad(Salad newSalad) {
 		this.salad = newSalad;
 	}
 
+	/**
+	 * This changes the dessert of the Menu
+	 * 
+	 * @param newDessert This is a Dessert object that will replace the current Menu dessert
+	 */
 	public void setDessert(Dessert newDessert) {
 		this.dessert = newDessert;
 	}

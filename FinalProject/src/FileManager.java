@@ -10,14 +10,21 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
-
+/**
+ * This class is used to manage menu files that are in the correct format
+ * for this program
+ * 
+ * @author Theo Zervos
+ *
+ */
 public class FileManager {
 
 
 	/**
-	 * Method readItems
-	 * @param fileName a String
-	 * @return the completed entrees ArrayList
+	 * This method reads from a given file in correct format and creates an ArrayList of Menu objects
+	 * 
+	 * @param fileName This is a String of the file directory
+	 * @return ArrayList This returns the completed ArrayList of Menu objects as read from the given file
 	 */
 
 	public static ArrayList<MenuItem> readItems(String fileName){
@@ -73,12 +80,13 @@ public class FileManager {
 
 
 	/**
-	 * Method writeMenu
-	 * @param fileName a String of file directory name
-	 * @param items an ArrayList of menu items
+	 * This method writes the menus to a chosen file
+	 * 
+	 * @param fileName This is a String of the file directory name
+	 * @param items This is an ArrayList of menu items
 	 */
 
-	public static void writeMenu(String fileName, ArrayList<Menu> menus) {
+	public static void writeMenus(String fileName, ArrayList<Menu> menus) {
 
 		try {
 
@@ -159,11 +167,7 @@ public class FileManager {
 
 
 	/////////OLD READ METHODS
-	/**
-	 * Method readEntrees
-	 * @param fileName a String
-	 * @return the completed entrees ArrayList
-	 */
+
 	/*
 	public static ArrayList<Entree> readEntrees(String fileName) {
 
@@ -201,12 +205,7 @@ public class FileManager {
 	}
 
 
-	/**
-	 * Method readSides
-	 * @param fileName a String
-	 * @return the completed sides ArrayList
-	 */
-	/*
+
 	public static ArrayList<Side> readSides(String fileName){
 
 		ArrayList<Side> sides = new ArrayList<>();
@@ -244,12 +243,7 @@ public class FileManager {
 	}
 
 
-	/**
-	 * Method readSalads
-	 * @param fileName a String
-	 * @return the completed salads ArrayList
-	 */
-	/*
+
 	public static ArrayList<Salad> readSalads(String fileName){
 
 		ArrayList<Salad> salads = new ArrayList<>();
@@ -286,12 +280,7 @@ public class FileManager {
 	}
 
 
-	/**
-	 * Method readDesserts
-	 * @param fileName a String
-	 * @return the completed desserts ArrayList
-	 */
-	/*
+	
 	public static ArrayList<Dessert> readDesserts(String fileName){
 
 		ArrayList<Dessert> desserts = new ArrayList<>();

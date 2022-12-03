@@ -13,6 +13,11 @@ import javax.swing.*;
  */
 public class MenuManagerGUI {
 
+	/**
+	 * This is the main method which makes use of the MenuManagerGUI class
+	 * 
+	 * @param args Unused
+	 */
 	public static void main(String[] args) {
 
 		MenuManagerGUI app = new MenuManagerGUI("data\\\\dishes.txt");
@@ -20,8 +25,11 @@ public class MenuManagerGUI {
 
 	
 	/**
-	 * Method MenuManagerGUI
-	 * @param fileName a String
+	 * This Method creates the entire GUI for the application using a given file in
+	 * the correct format
+	 * 
+	 * @param fileName This is a String for the file directory of which to build the
+	 * @since 11-29-2022
 	 */
 	public MenuManagerGUI(String fileName) {
 
@@ -204,6 +212,12 @@ public class MenuManagerGUI {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Create Menu With These Dishes button pressed!\n");
 				String name = JOptionPane.showInputDialog("Enter a name for your brand new menu!");
+				if(name.length() <= 0) {
+					while(name.length() <= 0) {
+						JOptionPane.showMessageDialog(null, "ERROR: You must enter a name for your menu");
+						name = JOptionPane.showInputDialog("Enter a name for your brand new menu");
+					}
+				}
 				Entree ent = (Entree) cboEntrees.getSelectedItem();
 				Side sid = (Side) cboSides.getSelectedItem();
 				Salad sal = (Salad) cboSalads.getSelectedItem();
@@ -219,6 +233,12 @@ public class MenuManagerGUI {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Generate a Random Menu button pressed!\n");
 				String name = JOptionPane.showInputDialog("Enter a name for your new random menu!");
+				if(name.length() <= 0) {
+					while(name.length() <= 0) {
+						JOptionPane.showMessageDialog(null, "ERROR: You must enter a name for your menu");
+						name = JOptionPane.showInputDialog("Enter a name for your brand new menu");
+					}
+				}
 				Menu m = menu.randomMenu(name);
 				l.addElement(m);
 			}
@@ -230,6 +250,12 @@ public class MenuManagerGUI {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Generate a Minimum Calories Menu button pressed!\n");
 				String name = JOptionPane.showInputDialog("Enter a name for your new minimum calories menu!");
+				if(name.length() <= 0) {
+					while(name.length() <= 0) {
+						JOptionPane.showMessageDialog(null, "ERROR: You must enter a name for your menu");
+						name = JOptionPane.showInputDialog("Enter a name for your brand new menu");
+					}
+				}
 				Menu m = menu.minCalories(name);
 				l.addElement(m);
 			}
@@ -251,11 +277,131 @@ public class MenuManagerGUI {
 		btnDetails.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Button Details Pressed!\n");
+				Menu selected = listCreatedMenus.getSelectedValue();
+				
+				if(l.size() == 0) {
+					JOptionPane.showMessageDialog(null, "You Must Create a Menu First!");
+				} else if (listCreatedMenus.isSelectionEmpty()){
+					JOptionPane.showMessageDialog(null, "Please Select a Menu to View It's Details");
+				} else {
+					
+					JFrame frmDetails = new JFrame("Menu: " + selected);
+					frmDetails.setBounds(frmMain.getX() + 175, frmMain.getY() - 100, 1920/2 - 70, 1080/2 + 150);
+					frmDetails.getContentPane().setLayout(null);
+					
+					////Creating components for frmDetails
+					//entree 
+					//entree label
+					JLabel lblEntreeDetails = new JLabel("Entree");
+					lblEntreeDetails.setFont(new Font("Verdanna", Font.BOLD, 18));
+					lblEntreeDetails.setBounds(40, 30, 100, 30);
+					frmDetails.add(lblEntreeDetails);
+					
+					//entree text Box
+					JTextArea txtEntreeDetails = new JTextArea(selected.getEntree().getName() + "\n" + selected.getEntree().getDescription());
+					txtEntreeDetails.setFont(new Font("Verdanna", Font.BOLD, 15));
+					txtEntreeDetails.setBounds(40, 65, 800, 90);
+					txtEntreeDetails.setLineWrap(true);
+					txtEntreeDetails.setBorder(BorderFactory.createLineBorder(Color.black));
+					txtEntreeDetails.setEditable(false);
+					frmDetails.add(txtEntreeDetails);
+					
+					
+					//side
+					//side label
+					JLabel lblSideDetails = new JLabel("Side");
+					lblSideDetails.setFont(new Font("Verdanna", Font.BOLD, 18));
+					lblSideDetails.setBounds(40, 155, 100, 30);
+					frmDetails.add(lblSideDetails);
+					
+					//side text area
+					JTextArea txtSideDetails = new JTextArea(selected.getSide().getName() + "\n" + selected.getSide().getDescription());
+					txtSideDetails.setFont(new Font("Verdanna", Font.BOLD, 15));
+					txtSideDetails.setBounds(40, 190, 800, 90);
+					txtSideDetails.setLineWrap(true);
+					txtSideDetails.setBorder(BorderFactory.createLineBorder(Color.black));
+					txtSideDetails.setEditable(false);
+					frmDetails.add(txtSideDetails);
+					
+					
+					//salad
+					//salad label
+					JLabel lblSaladDetails = new JLabel("Salad");
+					lblSaladDetails.setFont(new Font("Verdanna", Font.BOLD, 18));
+					lblSaladDetails.setBounds(40, 280, 100, 30);
+					frmDetails.add(lblSaladDetails);
+					
+					//salad text area
+					JTextArea txtSaladDetails = new JTextArea(selected.getSalad().getDescription());
+					txtSaladDetails.setFont(new Font("Verdanna", Font.BOLD, 15));
+					txtSaladDetails.setBounds(40, 315, 800, 90);
+					txtSaladDetails.setLineWrap(true);
+					txtSaladDetails.setBorder(BorderFactory.createLineBorder(Color.black));
+					txtSaladDetails.setEditable(false);
+					frmDetails.add(txtSaladDetails);
+					
+					
+					
+					//dessert
+					//dessert label
+					JLabel lblDessertDetails = new JLabel("Dessert");
+					lblDessertDetails.setFont(new Font("Verdanna", Font.BOLD, 18));
+					lblDessertDetails.setBounds(40, 405, 100, 30);
+					frmDetails.add(lblDessertDetails);
+					
+					
+					//dessert text
+					JTextArea txtDessertDetails = new JTextArea(selected.getDessert().getDescription());
+					txtDessertDetails.setFont(new Font("Verdanna", Font.BOLD, 15));
+					txtDessertDetails.setBounds(40, 440, 800, 90);
+					txtDessertDetails.setLineWrap(true);
+					txtDessertDetails.setBorder(BorderFactory.createLineBorder(Color.black));
+					txtDessertDetails.setEditable(false);
+					frmDetails.add(txtDessertDetails);
+					
+					//total calories
+					int calories = selected.getDessert().getCalories() + selected.getSide().getCalories() + selected.getSalad().getCalories() + selected.getEntree().getCalories();
+					//total calories label
+					JLabel lblCalories = new JLabel("Calories:");
+					lblCalories.setFont(new Font("Verdanna", Font.BOLD, 18));
+					lblCalories.setBounds(40, 570, 200, 30);
+					frmDetails.add(lblCalories);
+					
+					
+					//total calories text
+					JTextArea txtCalories = new JTextArea("" + calories);
+					txtCalories.setFont(new Font("Verdanna", Font.BOLD, 17));
+					txtCalories.setBounds(130, 572, 200, 30);
+					txtCalories.setBorder(BorderFactory.createLineBorder(Color.black));
+					txtCalories.setEditable(false);
+					frmDetails.add(txtCalories);
+					
+					
+					//total price
+					double price = selected.getDessert().getPrice() + selected.getSide().getPrice() + selected.getSalad().getPrice() + selected.getEntree().getPrice();
+					//total price label
+					JLabel lblPrice = new JLabel("Price: $");
+					lblPrice.setFont(new Font("Verdanna", Font.BOLD, 18));
+					lblPrice.setBounds(380, 570, 200, 30);
+					frmDetails.add(lblPrice);
+					
+					
+					//total price text
+					JTextArea txtPrice = new JTextArea("" + price);
+					txtPrice.setFont(new Font("Verdanna", Font.BOLD, 17));
+					txtPrice.setBounds(450, 572, 200, 30);
+					txtPrice.setBorder(BorderFactory.createLineBorder(Color.black));
+					txtPrice.setEditable(false);
+					frmDetails.add(txtPrice);
+					
+					
+					frmDetails.setVisible(true);
+				}
 			}
 		});
 
 
-		//action event listener for delet all button
+		//action event listener for delete all button
 		btnDeleteAll.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Delete All button pressed!\n");
@@ -289,7 +435,7 @@ public class MenuManagerGUI {
 						newL.add(l.get(i));				
 					}
 				
-					FileManager.writeMenu("data\\menus.txt", newL);
+					FileManager.writeMenus("data\\menus.txt", newL);
 					JOptionPane.showMessageDialog(null, "Menu(s) have been copied to file");
 				} else {
 					JOptionPane.showMessageDialog(null, "There are no menus to copy to file");
